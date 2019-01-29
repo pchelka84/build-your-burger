@@ -4,7 +4,8 @@
   margin: auto;
   height: 250px;
   /* In case we build a burger larger than 250px*/
-  overflow: scroll;
+  overflow: auto;
+
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
@@ -22,7 +23,6 @@
   .Burger {
     width: 450px;
     height: 400px;
-    overflow: hidden;
   }
 }
 
@@ -30,6 +30,5 @@
   .Burger {
     width: 700px;
     height: 600px;
-    overflow: hidden;
   }
 }
