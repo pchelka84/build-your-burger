@@ -23,10 +23,7 @@ class BurgerBuilder extends Component {
     purchasable: false
   };
 
-  updatePurchaseState = () => {
-    const ingredients = {
-      ...this.state.ingredients
-    };
+  updatePurchaseState = ingredients => {
     // turning the object into the array
     const sum = Object.keys(ingredients)
       .map(igKey => {
@@ -56,7 +53,7 @@ class BurgerBuilder extends Component {
 
     //updating the state
     this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
-    this.updatePurchaseState();
+    this.updatePurchaseState(updatedIngredients);
   };
 
   removeIngredientHandler = type => {
@@ -79,7 +76,7 @@ class BurgerBuilder extends Component {
 
     //updating the state
     this.setState({ totalPrice: newPrice, ingredients: updatedIngredients });
-    this.updatePurchaseState();
+    this.updatePurchaseState(updatedIngredients);
   };
 
   render() {
