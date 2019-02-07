@@ -6,13 +6,23 @@ import Toolbar from "./../Navigation/Toolbar/Toolbar";
 import SideDrawer from "./../Navigation/SideDrawer/SideDrawer";
 
 class Layout extends Component {
-  state = {};
+  state = {
+    showSideDrawe: true
+  };
+
+  sideDrawerClosedHandler = () => {
+    this.setState({ showSideDrawe: false });
+  };
+
   render() {
     return (
       <Aux>
         <Toolbar />
-        <SideDrawer />
-        <main className={classes.Content}>{props.children}</main>
+        <SideDrawer
+          open={this.state.showSideDrawe}
+          closed={this.sideDrawerClosedHandler}
+        />
+        <main className={classes.Content}>{this.props.children}</main>
       </Aux>
     );
   }
