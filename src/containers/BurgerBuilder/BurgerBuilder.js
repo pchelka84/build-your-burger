@@ -87,7 +87,7 @@ class BurgerBuilder extends Component {
   };
 
   purchaseCancelHandler = () => {
-    console.log("Backdrop was clicked");
+    // console.log("Backdrop was clicked");
     this.setState({ purchasing: false });
   };
 
