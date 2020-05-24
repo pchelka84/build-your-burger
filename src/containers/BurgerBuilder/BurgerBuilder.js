@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Aux from "../../hoc/Auxiliaru";
+import Aux from "../../hoc/Auxiliary/Auxiliary";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "./../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
@@ -9,7 +9,7 @@ const INGREDIENT_PRICES = {
   salad: 0.5,
   cheese: 0.4,
   meat: 1.3,
-  bacon: 0.7
+  bacon: 0.7,
 };
 
 class BurgerBuilder extends Component {
@@ -18,18 +18,18 @@ class BurgerBuilder extends Component {
       salad: 0,
       bacon: 0,
       cheese: 0,
-      meat: 0
+      meat: 0,
     },
     // base price
     totalPrice: 4,
     purchasable: false,
-    purchasing: false
+    purchasing: false,
   };
 
-  updatePurchaseState = ingredients => {
+  updatePurchaseState = (ingredients) => {
     // turning the object into the array
     const sum = Object.keys(ingredients)
-      .map(igKey => {
+      .map((igKey) => {
         // accessing values
         return ingredients[igKey];
       })
@@ -40,12 +40,12 @@ class BurgerBuilder extends Component {
     this.setState({ purchasable: sum > 0 });
   };
 
-  addIngredientHandler = type => {
+  addIngredientHandler = (type) => {
     // adding one ingredient of type
     const oldCount = this.state.ingredients[type];
     const updatedCount = oldCount + 1;
     const updatedIngredients = {
-      ...this.state.ingredients
+      ...this.state.ingredients,
     };
     updatedIngredients[type] = updatedCount;
 
@@ -59,7 +59,7 @@ class BurgerBuilder extends Component {
     this.updatePurchaseState(updatedIngredients);
   };
 
-  removeIngredientHandler = type => {
+  removeIngredientHandler = (type) => {
     // adding one ingredient of type
     const oldCount = this.state.ingredients[type];
     if (oldCount <= 0) {
@@ -68,7 +68,7 @@ class BurgerBuilder extends Component {
 
     const updatedCount = oldCount - 1;
     const updatedIngredients = {
-      ...this.state.ingredients
+      ...this.state.ingredients,
     };
     updatedIngredients[type] = updatedCount;
 
@@ -97,7 +97,7 @@ class BurgerBuilder extends Component {
 
   render() {
     const disabledInfo = {
-      ...this.state.ingredients
+      ...this.state.ingredients,
     };
     for (let key in disabledInfo) {
       // disabledInfo[key] <= 0 is going to be true or false
