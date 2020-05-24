@@ -2,14 +2,13 @@ import React from "react";
 
 import classes from "./BuildControl.css";
 
-const buildControl = props => (
+const buildControl = (props) => (
   <div className={classes.BuildControl}>
     <div className={classes.Label}>{props.label}</div>
-    {/* disabled = is an HTML property for a button */}
     <button
       className={classes.Less}
       onClick={props.removed}
-      disabled={props.disabled}
+      disabled={props.disabled} // disabled is a default property of an HTMl button
     >
       Less
     </button>
