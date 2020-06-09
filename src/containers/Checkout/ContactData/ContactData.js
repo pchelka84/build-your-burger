@@ -13,10 +13,15 @@ class ContactData extends Component {
     },
   };
 
+  orderHandler = (event) => {
+    event.preventDefault();
+    console.log(this.props.ingredients);
+  };
+
   render() {
     return (
       <div className={classes.ContactData}>
-        <h4>Enter your Contact Data</h4>
+        <h4>Enter your Contact Details</h4>
         <form>
           <input
             className={classes.Input}
@@ -43,7 +48,9 @@ class ContactData extends Component {
             placeholder="Zip Code"
           />
         </form>
-        <Button btnType="Success">ORDER</Button>
+        <Button btnType="Success" clicked={this.orderHandler}>
+          ORDER
+        </Button>
       </div>
     );
   }
