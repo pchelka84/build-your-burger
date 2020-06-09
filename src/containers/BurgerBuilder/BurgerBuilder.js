@@ -105,34 +105,6 @@ class BurgerBuilder extends Component {
 
   purchaseContinue = () => {
     // // alert("You continue!!");
-    // this.setState({ loading: true });
-    // const order = {
-    //   ingredients: this.state.ingredients,
-    //   // for production ( price: this.state.totalPrice;): calculate it on the server because there is
-    //   // probably there are products stored on the server there
-    //   // to make sure that the user isn't manipulating the code.
-    //   // price: this.state.totalPrice;
-    //   customer: {
-    //     name: "Eve Ves",
-    //     address: {
-    //       street: "Beautiful Street",
-    //       zipCode: 10011,
-    //       country: "the U.S.",
-    //     },
-    //     email: "test@test.com",
-    //   },
-    //   deliveryMethod: "fastest",
-    // };
-    // axios
-    //   .post("/orders.json", order) // .json required by Firebase
-    //   .then((response) => {
-    //     // console.log(response)
-    //     this.setState({ loading: false, purchasing: false });
-    //   })
-    //   .catch((error) => {
-    //     // console.log(error)
-    //     this.setState({ loading: false, purchasing: false });
-    //   });
 
     const queryParams = [];
     for (let i in this.state.ingredients) {
@@ -142,6 +114,9 @@ class BurgerBuilder extends Component {
           encodeURIComponent(this.state.ingredients[i])
       );
     }
+
+    queryParams.push("price=" + this.state.totalPrice);
+
     const queryString = queryParams.join("&");
 
     this.props.history.push({
