@@ -84,7 +84,7 @@ class ContactData extends Component {
             { value: "free", displayValue: "Free" },
           ],
         },
-        value: "",
+        value: "free",
         valid: true,
         validation: {},
       },
