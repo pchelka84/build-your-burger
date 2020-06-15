@@ -38,8 +38,8 @@ class ContactData extends Component {
         elementConfig: {
           type: "text",
           placeholder: "ZIP Code",
-          minLength: 6,
-          maxLength: 6,
+          minLength: 5,
+          maxLength: 5,
         },
         value: "",
         validation: {
@@ -170,6 +170,8 @@ class ContactData extends Component {
             elementType={formElement.config.elementType}
             elementConfig={formElement.config.elementConfig}
             value={formElement.config.value}
+            invalid={!formElement.config.valid}
+            shouldValidate={formElement.config.validation}
             changed={(event) => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
