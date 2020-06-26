@@ -30,7 +30,7 @@ export const purchaseBurger = (orderData) => {
       .post("/orders.json", orderData) // .json required by Firebase
       .then((response) => {
         console.log(response.data);
-        dispatch(purchaseBurgerSuccess(response.data, orderData));
+        dispatch(purchaseBurgerSuccess(response.data.name, orderData));
       })
       .catch((error) => {
         dispatch(purchasedBurgerFail(error));
