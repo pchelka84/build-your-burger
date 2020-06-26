@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import Order from "../../components/Order/Order/Order";
 import axios from "../../axios-orders";
 import withErrorHandler from "./../../hoc/withErrorHandler/withErrorHandler";
-import BurgerIngredient from "./../../components/Burger/BurgerIngredient/BurgerIngredient";
 
 class Orders extends Component {
   state = {
