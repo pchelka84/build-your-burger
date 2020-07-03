@@ -1,16 +1,16 @@
 import axios from "axios";
 
-import * as actiontTypes from "./actionTypes";
+import * as actionTypes from "./actionTypes";
 
 export const authStart = () => {
   return {
-    type: actiontTypes.AUTH_START,
+    type: actionTypes.AUTH_START,
   };
 };
 
 export const authSuccess = (token, userId) => {
   return {
-    type: actiontTypes.AUTH_SUCCESS,
+    type: actionTypes.AUTH_SUCCESS,
     idToken: token,
     userId: userId,
   };
@@ -18,14 +18,14 @@ export const authSuccess = (token, userId) => {
 
 export const authFail = (error) => {
   return {
-    type: actiontTypes.AUTH_FAIL,
+    type: actionTypes.AUTH_FAIL,
     error: error,
   };
 };
 
 export const logout = () => {
   return {
-    type: actiontTypes.AUTH_LOGOUT,
+    type: actionTypes.AUTH_LOGOUT,
   };
 };
 
@@ -63,5 +63,12 @@ export const auth = (email, password, isSignup) => {
         console.log(err);
         dispatch(authFail(err.response.data.error));
       });
+  };
+};
+
+export const setAuthRedirectPath = (path) => {
+  return {
+    type: actionTypes.SET_AUTH_REDIRECT_PATH,
+    path: path,
   };
 };
