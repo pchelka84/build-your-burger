@@ -33,5 +33,6 @@
 
 .ValidationError {
   color: red;
+  background-color: salmon;
   margin: 5px 0;
 }
