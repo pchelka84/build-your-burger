@@ -17,7 +17,6 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     this.props.onInitIngredients();
   }
 
@@ -45,7 +44,6 @@ class BurgerBuilder extends Component {
   };
 
   purchaseCancelHandler = () => {
-    // console.log("Backdrop was clicked");
     this.setState({ purchasing: false });
   };
 
